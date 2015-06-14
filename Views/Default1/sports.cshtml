@@ -1,0 +1,72 @@
+﻿@{
+   
+
+    if (Session["uName"] == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/-Lay.cshtml";
+    }
+}
+
+<h2>sports</h2>
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<html>
+<body background="~/images/gbb.jpg " style="background-size:cover">
+    <br />
+    <br />
+    <div style="width:100% ; float:right;width:30%">
+
+
+
+
+        <marquee direction="down" scrollamount="20" onmouseover='stop();' onmouseout='start();'>
+
+
+            <img src="~/images/s1.jpg" style="width:300px;height:300px">
+            <img src="~/images/s2.jpg" style="width:300px;height:300px">
+            <img src="~/images/s3.jpg" style="width:300px;height:300px">
+            <img src="~/images/s4.jpg" style="width:300px;height:300px">
+
+
+            <img src="~/images/s5.jpg" style="width:300px;height:300px">
+            <img src="~/images/s6.jpg" style="width:300px;height:300px">
+            <img src="~/images/s7.jpg" style="width:300px;height:300px">
+            <img src="~/images/s8.jpg" style="width:300px;height:300px">
+            <img src="~/images/s9.jpg" style="width:300px;height:300px">
+        </marquee>
+
+    </div>
+    <div style="float:left;width:50%">
+
+        @foreach (var j in ViewBag.sh)
+        {
+            if (j.type == "Sports")
+            {
+                <table class="table" style="border:4px solid green;background-color:antiquewhite">
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Title:    @j.title</th>
+                            <th style="width:60%">Description : @j.description</th>
+                            <th style="width:60%"><a href="/Default1/des?id=@j.Id" style="color:red" class="btn btn-primary">Description  </a><</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            }
+            else { continue; }
+
+        }
+    </div>
+</body>
+</html>

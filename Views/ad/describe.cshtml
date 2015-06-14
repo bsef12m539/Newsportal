@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "describe";
+    Layout = "~/Views/Shared/-Layoutad.cshtml";
+}
+
+<div class="container">
+    <h1>Description</h1>
+    <h3 style="color:blue">Title :  @ViewBag.des.title</h3>
+    <h3 style="color:blue">Description : @ViewBag.des.description</h3>
+    @foreach (var m in ViewBag.moh)
+    {
+
+
+        if (m.title == ViewBag.des.title)
+        {
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">coment:</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" name="t" disabled placeholder="" value="@m.coment">
+                    </div>
+                </div>
+            </form>
+
+
+            @* <div style="margin-left:110px"><input type="text" margin-top="4cm" padding-top 4cm; value="@m.coment" disabled /></div>*@
+
+        }
+
+
+    }
+    <form class="form-horizontal" role="form" action="/Default1/adcoment" method="post">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">title:</label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" name="title" readonly placeholder="" value="@ViewBag.des.title">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">comment:</label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" name="coment" placeholder="comment" required>
+            </div>
+        </div>
+        @{
+            ViewBag.c = ViewBag.des.title;
+        }
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>

@@ -1,0 +1,185 @@
+﻿@{
+    if (Session["uName"] == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/-Lay.cshtml";
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    
+
+</head>
+<body>
+    <div>
+        <div class="container">
+
+            <!-- Marketing Icons Section -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Welcome to Youngistan
+                    </h1>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="fa fa-fw fa-check"></i>Jobs Portal</h4>
+                        </div>
+                        <div class="panel-body">
+                            <marquee scrollamount="10" onmouseover='stop();' onmouseout='start();'>
+                                <img src="~/images/images (6).jpg" style="width:300px;height:300px">
+
+                                <img src="~/images/images (3).jpg" style="width:300px;height:300px">
+                                <img src="~/images/images (4).jpg" style="width:300px;height:300px">
+                                <img src="~/images/images (5).jpg" style="width:300px;height:300px">
+                                <img src="~/images/images (7).jpg" style="width:300px;height:300px">
+                            </marquee>
+
+                                <p>In this panel you can post recent jobs and you can also search jobs  and also post comments for help other</p>
+                                <a href="#" class="btn btn-default">Learn More</a>
+</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="fa fa-fw fa-gift"></i> Sports </h4>
+                        </div>
+                        <div class="panel-body">
+
+
+                            <marquee  scrollamount="10" onmouseover='stop();' onmouseout='start();'>
+
+
+                                <img src="~/images/s1.jpg" style="width:300px;height:300px">
+                                <img src="~/images/s2.jpg" style="width:300px;height:300px">
+                                <img src="~/images/s3.jpg" style="width:300px;height:300px">
+                                <img src="~/images/s4.jpg" style="width:300px;height:300px">
+
+
+                                <img src="~/images/s5.jpg" style="width:300px;height:300px">
+                                <img src="~/images/s6.jpg" style="width:300px;height:300px">
+                                <img src="~/images/s7.jpg" style="width:300px;height:300px">
+                                <img src="~/images/s8.jpg" style="width:300px;height:300px">
+                                <img src="~/images/s9.jpg" style="width:300px;height:300px">
+                            </marquee>
+
+
+
+                            <p>You can enjoy sports news of recent matches of all sports and in entertainment you can enjoys songs of different movies </p>
+                            <a href="#" class="btn btn-default">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="fa fa-fw fa-compass"></i>Latest Software</h4>
+                        </div>
+                        <div class="panel-body">
+
+
+                            <marquee scrollamount="10" onmouseover='stop();' onmouseout='start();'>
+
+
+                                <img src="~/images/Adobe.jpg" style="width:300px;height:300px">
+                                <img src="~/images/Adobe.jpg" style="width:300px;height:300px">
+                                @*<img src="~/images/e3.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e4.jpg" style="width:300px;height:300px">
+
+
+                                <img src="~/images/e5.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e6.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e7.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e8.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e9.jpg" style="width:300px;height:300px">*@
+                            </marquee>
+
+
+
+                            <p>You can update yourself with the latest software and working of software that how they work and which one will full fill your need</p>
+                            <a href="#" class="btn btn-default">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="fa fa-fw fa-compass"></i>Entertainment</h4>
+                        </div>
+                        <div class="panel-body">
+
+
+                            <marquee scrollamount="10" onmouseover='stop();' onmouseout='start();' class="fancybox">
+
+
+                                <img src="~/images/e1.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e2.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e3.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e4.jpg" style="width:300px;height:300px">
+
+
+                                <img src="~/images/e5.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e6.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e7.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e8.jpg" style="width:300px;height:300px">
+                                <img src="~/images/e9.jpg" style="width:300px;height:300px">
+                            </marquee>
+
+
+
+                            <p>You can update yourself with the latest software and working of software that how they work and which one will full fill your need</p>
+                            <a href="#" class="btn btn-default">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; Your Website 2014</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+</body>
+</html>

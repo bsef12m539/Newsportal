@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "edit";
+    Layout = "~/Views/Shared/-Layoutad.cshtml";
+}
+
+<h2>edit</h2>
+<body background="~/images/gbb.jpg " style="background-size:cover">
+    <br />
+    <br />
+    <form class="form-horizontal" role="form" action="/ad/upd?id=@ViewBag.ed.Id" method="post">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Title:</label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" name="title" required value=@ViewBag.ed.title>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="not">Description:</label>
+            <div class="col-lg-4">
+
+                <textarea class="form-control" name="ta" required>@ViewBag.ed.description</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>

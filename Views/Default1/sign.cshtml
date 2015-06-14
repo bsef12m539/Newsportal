@@ -1,0 +1,245 @@
+﻿@model young.Models.user
+@{
+    ViewBag.Title = "sign";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ck</title>
+   
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+   
+    <script src="~/Scripts/jquery-latest.min.js"></script>
+
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+   
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+   
+
+       <script>
+
+    function checkEmail() {
+
+        var email = document.getElementById('email').value;
+
+        if ((email.indexOf('@@') < 0) || email.lastIndexOf('.') < 0 || (email.lastIndexOf('.') - email.lastIndexOf('@@') < 2)) {
+            alert('Please Enter Valid E-mail !!');
+            return false;
+        }
+
+    }
+
+
+    </script>
+
+
+
+
+
+    
+
+
+
+
+
+
+</head>
+
+<script>
+
+    $(document).ready(function () {
+
+        
+    
+        $('#b1').click(function () {
+
+            var email = $('#email').val();
+
+            //alert('User Name ='+ userName);
+            //$('#checking').show();
+            $.getJSON("/Default1/CheckUserName?email=" + email, function (data) {
+
+                if (data) {
+                    $('#result').text("email already exists in database");
+
+                }
+                else {
+                    $('#result').text("email is available");
+                }
+            });
+
+        });
+
+    });
+</script>
+
+
+
+
+
+
+
+<body background="~/images/gbb.jpg " style="background-size:cover">
+    
+    <br />
+    <br />
+    <div class="row">
+
+        <div class="col-sm-4 pull-left" style="border:4px solid green; margin-left:50px">
+            <br />
+            <h3>LOGIN:</h3><br />
+            <div id="wer">
+                @if (ViewBag.er=="wrong")
+        {
+                 
+           <h4 style="color:red">you have wrong email or password</h4>
+        }
+            </div>
+            <form class="form-horizontal" role="form" action="/Default1/transfer" method="post">
+                @**@
+
+                    <
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+
+                        <div class="col-lg-4">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Password:</label>
+                        <div class="col-lg-4">
+                            <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4 pull-right" style="border:4px solid green; margin-right:50px">
+     <br />
+     <h1>Sign Up:</h1><br />
+    @*<form class="form-horizontal" role="form" action="/Default1/signin" method="post">
+         <div class="form-group">
+             <label class="control-label col-sm-2" for="name">Name:</label>
+             @Html.LabelFor(m => m.name)
+             <div class="col-lg-4">
+                 <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+             </div>
+         </div>
+
+         <div class="form-group">
+             <label class="control-label col-sm-2" for="email">Email:</label>
+
+             <div class="col-lg-4">
+                 <input type="text" class="form-control" name="email" id="email" placeholder="Enter email" required>
+             </div>
+         </div>
+         <div class="form-group">
+             <label class="control-label col-sm-2" for="pwd">Password:</label>
+             <div class="col-lg-4">
+                 <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
+             </div>
+         </div>
+
+
+         <div class="form-group">
+             <label class="control-label col-sm-2" for="adress">Adress:</label>
+             <div class="col-lg-4">
+                 <input type="text" class="form-control" name="adress" placeholder="Adress" required>
+             </div>
+         </div>
+
+         <div class="form-group">
+             <label class="control-label col-sm-2" for="count">Country:</label>
+             <div class="col-lg-3">
+                 <input type="text" class="form-control" name="country" placeholder="country" required>
+             </div>
+         </div>
+
+
+
+
+         <div class="form-group">
+             <label class="control-label col-sm-2" for="gen">Gender:</label>
+             <div class="col-lg-4">
+                 <select class="from-control input-sm" name="gender" id="year">
+                     <option>male </option>
+                     <option>female </option>
+
+
+                 </select>
+             </div>
+
+         </div>
+
+         <div class="form-group">
+             <div class="col-sm-offset-2 col-sm-10">
+                 <button type="submit" class="btn btn-primary" onclick="checkEmail">Sign up</button>
+             </div>
+         </div>
+
+     </form>*@
+                @using (Html.BeginForm("signin", "Default1", FormMethod.Post))
+                {  
+                    @Html.ValidationSummary(true)
+                    
+                    @Html.LabelFor(m => m.name)
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.name, new {  type = "text", required = "required" })
+                    @Html.ValidationMessageFor(m => m.name)
+       
+
+                    </div>
+                    
+                <br /><br />
+            <div class="editor-field">
+                @Html.LabelFor(m => m.email)
+                @Html.EditorFor(m => m.email, new { name = "email", type = "email", required = "required" })
+                @Html.ValidationMessageFor(m => m.email)
+                <input type="button" id="b1" value="Check" />
+                <div id="result"></div></div>
+
+                <br /><br />
+                @Html.LabelFor(m => m.pwd)
+                @Html.PasswordFor(m => m.pwd, new{ type = "password",required="required"})
+                @Html.ValidationMessageFor(model => model.pwd)
+                <br /><br />
+                @Html.LabelFor(m => m.adress)
+                @Html.TextBoxFor(m => m.adress,new {type="text",required="required"})
+
+                <br /><br />
+                @Html.LabelFor(m => m.country)
+                @Html.TextBoxFor(m => m.country, new { type = "text", required = "required" })
+
+                <br /><br />
+                @Html.HiddenFor(m => m.type, new { Value = "user" })
+                @Html.LabelFor(m=>m.gender)<br />
+                           <h5>male</h5>
+                @Html.RadioButtonFor(m=>m.gender,"male")
+            <h5>female</h5>
+               @Html.RadioButtonFor(m => m.gender, "female")
+
+
+            <br />
+    <input type="submit" class="btn btn-primary" value="Sign up" />
+                }
+       
+        @*<input type="submit" value="Sign up" />*@
+
+    </div>
+        </div>
+    </body>

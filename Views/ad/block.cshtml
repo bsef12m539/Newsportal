@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/-Layoutad.cshtml";
+  
+}
+@if (Session["uName"] == null)
+{
+    Response.Redirect(Url.Action("sign", "default1"));
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>block</title>
+</head>
+<body background="~/images/gbb.jpg " style="background-size:cover">
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <h1>Name</h1>
+        <table class="table" style="width:60%; border:4px solid green">
+            <thead>
+
+                @foreach (var j in ViewBag.block)
+                {
+                    if (j.type == "user")
+                    {
+                        <tr>
+                            <th style="color:red"> @j.name..</th>
+                            <th style="color:red"> @j.email..</th>
+                            <th ><a href="/ad/del?id=@j.Id" style="color:red">BLOCK</a></th>
+                        </tr>
+                    }
+                }
+            </thead>
+
+        </table>
+    </div>
+</body>
+</html>

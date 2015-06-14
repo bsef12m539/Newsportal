@@ -1,0 +1,19 @@
+﻿@model String[]
+
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/-Layoutad.cshtml";
+}
+
+<h2>GetAll</h2>
+@{
+    int i = 0;
+    int id = 5;
+    foreach (String s in Model)
+    {
+
+        <img src="@("../Files/"+@i+".jpg")"  width="200" height="200"/>
+        i++;
+
+    }
+}

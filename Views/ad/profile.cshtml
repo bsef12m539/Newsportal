@@ -1,0 +1,73 @@
+﻿@*@model young.Models.user*@
+           @using young.Models;
+@{
+    Layout = "~/Views/Shared/-Layoutad.cshtml";
+}
+@section profile
+ {
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>profile</title>
+</head>
+<body background="~/images/gbb.jpg " style="background-size:cover" >
+    <div>
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="margin-left:100px">
+            <table class="table" style="width:60%; border-color:aqua ;border:4px; border-style:dashed ">
+                <thead>
+                    <tr>
+                        <th style="width:20% ;color:red">Name</th>
+                        <th style="width:60% ;color:red">@Model.name</th>
+
+                    </tr>
+
+
+                    <tr>
+                        <th style="width:20%;color:red">Email</th>
+                        <th style="width:60% ;color:red">@Model.email</th>
+
+                    </tr>
+
+                <tbody>
+                    <tr>
+                        <th style="width:20%;color:red">Adress</th>
+                        <th style="width:60% ;color:red">@Model.adress</th>
+
+                    </tr>
+                </tbody>
+
+                <tr>
+                    <th style="width:20%;color:red">country</th>
+                    <th style="width:60% ;color:red">@Model.country</th>
+
+                </tr>
+
+
+                <tr>
+                    <th style="width:20%;color:red">Gender</th>
+                    <th style="width:60% ;color:red">@Model.gender</th>
+
+                </tr>
+
+            </table>
+        </div>
+
+        <!-- Enable the tabs -->
+        <script type="text/javascript">
+            $('#myTabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            });
+        </script>
+    </div>
+</body>
+</html>
+    }
