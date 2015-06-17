@@ -59,7 +59,8 @@
     $(document).ready(function () {
 
         
-    
+        $("input").addClass("form-control","col-lg-4")
+       
         $('#b1').click(function () {
 
             var email = $('#email').val();
@@ -196,48 +197,50 @@
                 @using (Html.BeginForm("signin", "Default1", FormMethod.Post))
                 {  
                     @Html.ValidationSummary(true)
-                    
-                    @Html.LabelFor(m => m.name)
-                
-                    @Html.EditorFor(m => m.name, new {  type = "text", required = "required" })
-                    @Html.ValidationMessageFor(m => m.name)
-       
-
-                
-                    
-                <br /><br />
-            <div class="editor-field">
-                @Html.LabelFor(m => m.email)
-                @Html.EditorFor(m => m.email, new { name = "email", type = "email", required = "required" })
-                @Html.ValidationMessageFor(m => m.email)
-                <input type="button" id="b1" value="Check" />
-                <div id="result"></div></div>
-
-                <br /><br />
-                @Html.LabelFor(m => m.pwd)
-                @Html.PasswordFor(m => m.pwd, new{ type = "password",required="required"})
-                @Html.ValidationMessageFor(model => model.pwd)
-                <br /><br />
-                @Html.LabelFor(m => m.adress)
-                @Html.TextBoxFor(m => m.adress,new {type="text",required="required"})
-
-                <br /><br />
-                @Html.LabelFor(m => m.country)
-                @Html.TextBoxFor(m => m.country, new { type = "text", required = "required" })
-
-                <br /><br />
-                @Html.HiddenFor(m => m.type, new { Value = "user" })
-                @Html.LabelFor(m=>m.gender)<br />
-                           <h5>male</h5>
-                @Html.RadioButtonFor(m=>m.gender,"male")
-            <h5>female</h5>
-               @Html.RadioButtonFor(m => m.gender, "female")
+                    <div  class="col-lg-9">
+                        @Html.LabelFor(m => m.name)
+                        @Html.EditorFor(m => m.name, new { type = "text", required = "required", id = "input", width = 50 })
+                        @Html.ValidationMessageFor(m => m.name)
+                    </div> <br /><br />
 
 
-            <br />
-    <input type="submit" class="btn btn-primary" value="Sign up" />
-                }
-       
+                    <div class="col-lg-9">
+                        @Html.LabelFor(m => m.email)
+                        @Html.EditorFor(m => m.email, new { name = "email", type = "email", required = "required" })
+                        @Html.ValidationMessageFor(m => m.email)
+                        <input type="button" id="b1" value="Check" class="btn btn-primary" style="width:30%" />
+                        <div id="result"></div>
+                    </div><br /><br />
+
+                    <div class="col-lg-9">
+                        @Html.Label("Password")
+                        @Html.PasswordFor(m => m.pwd, new { type = "password", required = "required" })
+                        @Html.ValidationMessageFor(model => model.pwd)
+                    </div>
+                         <br /><br />    <br /><br />
+                    <div class="col-lg-9">
+                        @Html.LabelFor(m => m.adress)
+                        @Html.TextBoxFor(m => m.adress, new { type = "text", required = "required" })
+                    </div>
+                         <br /><br />
+                    <div class="col-lg-9">
+                        @Html.LabelFor(m => m.country)
+                        @Html.TextBoxFor(m => m.country, new { type = "text", required = "required" })
+                        </div>
+                     <br /><br />
+                        <div class="col-lg-9">
+                            @Html.HiddenFor(m => m.type, new { Value = "user" })
+                            @Html.LabelFor(m=>m.gender)<br />
+                            <h5>male</h5>
+                            @Html.RadioButtonFor(m=>m.gender,"male")
+                            <h5>female</h5>
+                            @Html.RadioButtonFor(m => m.gender, "female")
+
+                            </div>
+                            <br />
+                            <input type="submit" class="btn btn-primary" value="Sign up" style="width:30%" />
+        }
+
         @*<input type="submit" value="Sign up" />*@
 
     </div>
